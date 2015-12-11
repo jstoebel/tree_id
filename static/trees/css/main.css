@@ -1,0 +1,8 @@
+body{
+    color: green;
+    background: url("redwoods.jpg") no-repeat 100% 100% fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+}

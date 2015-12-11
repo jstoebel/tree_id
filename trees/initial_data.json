@@ -1,0 +1,33 @@
+/*
+Final Lab
+Jacob Stoebel (stoebelj)
+CSC 326, Data Structures
+initial_data.json
+Purpose: Provides the intial data to populate (or reset) the database.
+To reset this database type python manage.py reset_data
+Aknowledgements: (see readme.txt)
+*/
+
+[
+	{
+		"id" : 1,
+		"guess" : "a tree",
+		"edge" : null,
+		"parent_id" : null,
+		"question" : "Does this tree have leaves or needles?"
+	},
+	{
+		"id" : 2,
+		"guess" : "a deciduous tree",
+		"edge" : "Leaves",
+		"parent_id" : 1,
+		"question" : null
+	},
+	{
+		"id" : 3,
+		"guess" : "a coniferous tree",
+		"edge" : "Needles",
+		"parent_id" : 1,
+		"question" : null
+	}
+]

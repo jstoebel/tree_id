@@ -1,0 +1,55 @@
+{% extends 'trees/content_base.html' %}
+{% block well_content %}
+        <div style="text-align:left">
+                    <!--button to go back to the prior node if this node has a parent.-->
+
+                <form action="{% url 'trees:show_node' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" value="{{node.id}}"></input>
+                    {% if node.parent %}
+                        <!-- Button to give if the node has a parent-->
+                        <button type="submit" class="btn btn-success">
+                            <i class="glyphicon glyphicon-arrow-left"></i>
+                            Back
+                        </button>
+                    {% else %}
+                        <!-- hidden button (for consistant white space if this is the root node-->
+                        <button type="submit" class="btn btn-success hidden">
+                            <i class="glyphicon glyphicon-arrow-left"></i>
+                            Back
+                        </button>
+                    {% endif %}
+                </form>
+
+                <br>
+
+                <span class="guess-intro">My best guess so far: this is
+                    <span class="guess">{{node.guess}}.</span>
+                </span>
+                </br>
+
+                <!--Ask question or give up.-->
+
+                {% if node.is_leaf%}
+                    That's all I know!
+
+                    <a href="/trees/learn/{{node.id}}">Help this site get better.</a> </br>
+                {% else %}
+                    {{node.question}} </br>
+                    <!--Answer choices-->
+
+                    <form action="{% url 'trees:show_node' %}" method="post">
+                    {% csrf_token %}
+                    {% for child in children %}
+                      <input type="radio" name="answer" value="{{child.id}}"> {{child.edge}}
+                      <br>
+                    {% endfor %}
+
+                        <button type="submit" class="btn btn-success">
+                            Submit
+                        </button>
+                    </form>
+
+                {% endif %}
+        </div>
+{% endblock %}

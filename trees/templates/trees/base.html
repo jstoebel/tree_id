@@ -1,0 +1,79 @@
+<style>
+    body{
+    //color: green;
+    background: url('http://www.calegacy.org/wp-content/uploads/2012/05/california-redwoods.png') no-repeat 100% 100% fixed;
+    //background: url('california-redwoods.png') no-repeat 100% 100% fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+}
+
+.new-question-box {
+    width: 50%;
+}
+
+.home-well {
+    background: none;
+}
+
+a.btn.btn-success.center-button {
+    font-size: 50pt;
+}
+.center-button {
+
+    margin: auto;
+    position: absolute;
+    top: 50%; right: 50%;
+    align: center;
+    transform: translate(50%, 0%);
+    opacity: 0.9;
+}
+
+.question-form {
+    top: 30%;
+    background-color: white;
+}
+
+.guess-intro {
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+.guess {
+    text-decoration: underline;
+}
+</style>
+
+<html>
+  <head>
+    <title>{% block title %}Tree Identifier{% endblock %}</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'static/css/main.css' %}" />
+  </head>
+<body>
+
+    <!--NAVEGATION BAR-->
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/trees">Tree Identifier</a>
+            </div>
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="/trees">Home <span class="sr-only">(current)</span></a></li>
+              </ul>
+
+              <ul class="nav navbar-nav">
+                  <li class="active"> <a href="/trees/show_node"> Identify a Tree </a></li>
+              </ul>
+
+
+        </div>
+    </nav>
+
+    {% block content %} {% endblock %}
+
+</body>
+</html>

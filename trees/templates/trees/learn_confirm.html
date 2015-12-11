@@ -1,0 +1,13 @@
+{% extends 'trees/content_base.html' %}
+{% block well_content %}
+
+<!--the confirmation page-->
+<br>
+        Thanks for your submission!
+    <ul class="list-group">
+        <li class="list-group-item active">We updated {{parent_node.guess}} to trigger the question {{parent_node.question}} </li>
+        <li class="list-group-item">We created a new item {{child1.guess}} linked to the answer {{child1.edge}}</li>
+        <li class="list-group-item">We created a new item {{child2.guess}} linked to the answer {{child2.edge}}</li>
+    </ul>
+</body>
+{% endblock %}

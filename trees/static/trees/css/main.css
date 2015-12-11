@@ -1,0 +1,41 @@
+body{
+    //color: green;
+    background: url('../img/redwoods.jpg') no-repeat 100% 100% fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+}
+
+.new-question-box {
+    width: 50%;
+}
+
+.home-well {
+    background: none;
+}
+
+.center-button {
+
+    margin: auto;
+    position: absolute;
+    top: 50%; right: 50%;
+    align: center;
+    font-size: 20pt;
+    transform: translate(50%, 0%);
+    opacity: 0.9;
+}
+
+.question-form {
+    top: 30%;
+    background-color: white;
+}
+
+.guess-intro {
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+.guess {
+    text-decoration: underline;
+}

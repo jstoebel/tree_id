@@ -1,0 +1,43 @@
+{% extends 'trees/content_base.html' %}
+{% block well_content %}
+
+{% if messages %}
+<div class="messages">
+    {% for message in messages %}
+    {{message }}
+    {% endfor %}
+</div>
+{% endif %}
+
+<!--Give us a question!-->
+<span class="guess-intro">Currently, we know that this tree is
+    <span class="guess">{{node.guess}}.</span>
+    </span>
+<br>
+
+<form action="{% url 'trees:learn_confirm' %}" method="post">
+    {% csrf_token %}
+
+
+    <div class="row">{{form.question.label_tag }}</div></br>
+    <div class="row">{{form.question }}</div> </br>
+    <p>
+
+    Next, add the two possible answers to these questions and what we can subsequently determine from each answer:
+    <br>
+    <div class="row">
+        If the user answers {{form.guess1 }} we can infer that this is {{form.edge1 }} </br>
+        If the user answers {{form.guess2 }} we can infer that this is {{form.edge2 }}
+    </div>
+
+    <p>
+
+        {{form.parent_id}}
+
+        </br>
+        <button type="submit" class="btn btn-success">
+            Submit
+    </button>
+    </p>
+</form>
+{% endblock %}

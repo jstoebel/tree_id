@@ -1,0 +1,15 @@
+{% extends 'trees/base.html' %}
+
+{% block content %}
+    <!-- a boot strap well inside a bootstrap row for all main content.-->
+    <div class = "center-content">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="well main-content">
+                    {% block well_content %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
